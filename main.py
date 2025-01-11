@@ -60,3 +60,12 @@ print(maximum_num)
 fitness_data = ["Juliana", 7000, 5500, 10300, 8000, 1200, 2000, 5000]
 slice_list = fitness_data[1:3]
 print(slice_list)
+
+
+
+# While loop
+
+index = 0
+while index <= 9:
+    print(index)
+    index = index + 1

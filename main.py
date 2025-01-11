@@ -140,7 +140,7 @@ print(type(steps[0]))
 # Loading data into dictonary
 
 # Reading data from a file
-data = numpy.loadtxt("steps.csv", delimiter = ",", dtype = str)
+data = numpy.loadtxt("steps-example.csv", delimiter = ",", dtype = str)
 
 # Adding data to dictionary
 data_dict = {}

@@ -90,3 +90,48 @@ hourly_steps = data[1:]
 
 daily_steps = hourly_to_daily_step(hourly_steps)
 print("Daily steps:", daily_steps)
+
+
+
+
+# Importing numpy and reading single data value
+import numpy
+
+data = numpy.loadtxt('data.txt')
+
+print(data)
+
+
+# Reading multiple values
+num1, num2 = numpy.loadtxt('data-two-values.csv', delimiter=',')
+print(num1, num2)
+
+
+# Loading multiples values into list
+data_list = numpy.loadtxt('data-multiple-values.csv', delimiter=',')
+print(data_list)
+
+
+# Reading mixed data types
+
+try:
+   data = numpy.loadtxt('data-mixed-types.csv', delimiter = ',')
+   print(data)
+except:
+   print("mixed data type error")
+
+
+# Resolving the exception around mixed data types
+data = numpy.loadtxt('data-mixed-types.csv', delimiter=',', dtype='str')
+print(data)
+
+
+# Convert the data types
+data = numpy.loadtxt('data-mixed-types.csv', delimiter = ',', dtype = 'str')
+
+name = data[0]
+steps = data[1:]
+steps = steps.astype(int)
+
+print(type(steps[0]))
+

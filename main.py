@@ -135,3 +135,41 @@ steps = steps.astype(int)
 
 print(type(steps[0]))
 
+
+
+# Loading data into dictonary
+
+# Reading data from a file
+data = numpy.loadtxt("steps.csv", delimiter = ",", dtype = str)
+
+# Adding data to dictionary
+data_dict = {}
+for i in range(1, len(data)): # Choosing 1 instead of 0 to skip the header row
+    row = data[i] # <--- Picking out a list from data
+    name = row[0] # <--- Extracting name
+    steps = numpy.array(row[1:], dtype = int) # <--- Extracting list of steps as integer
+    data_dict[name] = steps # <--- Adding key:value pair to the dictionary
+
+print(data_dict)
+
+
+
+
+
+# Pie chart
+import matplotlib.pyplot as pyplot
+
+data = [3, 4, 5]
+
+pyplot.pie(data)
+pyplot.show() # this blocks the thread
+
+
+# Bubble plotting
+
+x_values = [1, 2, 3, 4, 5, 6, 7]
+y_values = [3000, 6000, 5000, 8000, 11000, 9000, 10000]
+weight = [100, 150, 2000, 200, 400, 300, 250]
+
+pyplot.scatter(x_values, y_values, weight)
+pyplot.show()
